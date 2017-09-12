@@ -8,7 +8,7 @@ include ("homeFunctions.php");
 
 $fileName = "pictures\homeAutoGraphMob.png";
 
-$sleepTime = 180;
+$sleepTime = 160;
 if(isCli())
 {
 	print "Sleeping ".$sleepTime."s. \n";
@@ -21,7 +21,6 @@ do
 		$time = time();
 		print date('H:i:s',$time).", Working \n";
 	}
-
 
 	// Create the graph.
 	$graph = new Graph(395,219);
