@@ -1,0 +1,54 @@
+.hl-default {
+	COLOR: #000
+}
+.hl-code {
+	COLOR: #333
+}
+.hl-brackets {
+	COLOR: #808000
+}
+.hl-comment {
+	FONT: italic 1em Georgia, serif; COLOR: #333
+}
+.hl-quotes {
+	COLOR: #8b0000
+}
+.hl-string {
+	COLOR: #f00
+}
+.hl-identifier {
+	COLOR: #00f
+}
+.hl-builtin {
+	COLOR: #008080
+}
+.hl-reserved {
+	COLOR: #008000
+}
+.hl-inlinedoc {
+	COLOR: #483d8b
+}
+.hl-var {
+	COLOR: #00008b
+}
+.hl-url {
+	COLOR: #00f
+}
+.hl-special {
+	COLOR: #000080
+}
+.hl-number {
+	COLOR: #800000
+}
+.hl-inlinetags {
+	COLOR: #00f
+}
+.hl-main {
+	BACKGROUND-COLOR: #f9f9f9; MARGIN-BOTTOM: 1em; MARGIN-LEFT: 15px; FONT-SIZE: 0.95em; MARGIN-RIGHT: 10px
+}
+.hl-gutter {
+	BORDER-BOTTOM: red 0px solid; BORDER-LEFT: red 0px solid; BACKGROUND-COLOR: #999999; WIDTH: 30px; PADDING-RIGHT: 3px; COLOR: white; FONT-SIZE: 0.95em; BORDER-TOP: red 0px solid; BORDER-RIGHT: red 0px solid
+}
+.hl-table {
+	BORDER-BOTTOM: gray 1px dashed; BORDER-LEFT: gray 1px dashed; BACKGROUND-COLOR: #f9f9f9; FONT-FAMILY: courier; BORDER-TOP: gray 1px dashed; BORDER-RIGHT: gray 1px dashed
+}

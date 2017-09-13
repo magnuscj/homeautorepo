@@ -1,0 +1,292 @@
+@import url( phphl.css );
+H1 {
+	BORDER-BOTTOM: #17608e 2px solid; BORDER-LEFT: #17608e 2px solid; PADDING-BOTTOM: 15px; BACKGROUND-COLOR: #3780ae; MARGIN-TOP: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; MARGIN-BOTTOM: 15px; COLOR: white; MARGIN-LEFT: 0px; FONT-SIZE: 1.7em; BORDER-TOP: #17608e 2px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #17608e 2px solid; PADDING-TOP: 15px
+}
+H2 {
+	BORDER-BOTTOM: #cbb 1px solid; LINE-HEIGHT: 1.7em; FONT-VARIANT: small-caps; MARGIN: 15px 0px; COLOR: #555; FONT-SIZE: 1.8em; FONT-WEIGHT: bold
+}
+DIV[class=sect1] H2 {
+	BORDER-BOTTOM: medium none; LINE-HEIGHT: 1.7em; MARGIN: 15px 0px; COLOR: #555; FONT-SIZE: 1.4em; FONT-WEIGHT: normal
+}
+H3 {
+	TEXT-ALIGN: left; PADDING-LEFT: 15px; COLOR: #555; FONT-SIZE: 1.33em; FONT-WEIGHT: normal
+}
+H4 {
+	PADDING-LEFT: 15px; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.filename {
+	FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace
+}
+.option {
+	FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace
+}
+.guimenu {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ff7; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace; PADDING-TOP: 0px
+}
+.guimenuitem {
+	PADDING-BOTTOM: 0px; BACKGROUND-COLOR: #ff7; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace; PADDING-TOP: 0px
+}
+.classname {
+	FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace; FONT-WEIGHT: bold
+}
+.methodname {
+	FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace; FONT-WEIGHT: bold
+}
+.command {
+	FONT-WEIGHT: bold
+}
+.parameter {
+	FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace
+}
+.envar {
+	FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace; FONT-WEIGHT: bold
+}
+.function {
+	FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace
+}
+.variablelist {
+	MARGIN-LEFT: 15px
+}
+.variablelist TD {
+	FONT-SIZE: 1em
+}
+.variablelist TH {
+	FONT-SIZE: 1em
+}
+.screen {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace; OVERFLOW: hidden; PADDING-TOP: 5px
+}
+.synopsis {
+	BACKGROUND-COLOR: #fef3c1; PADDING-LEFT: 5px; FONT-FAMILY: "Bitstream Vera Sans Mono", Courier, monospace
+}
+.important {
+	MARGIN-TOP: 10px; MARGIN-BOTTOM: 10px
+}
+DIV.mediaobject {
+	MARGIN-TOP: 15px; MARGIN-BOTTOM: 15px
+}
+.mediaobject IMG {
+	DISPLAY: block; MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.note {
+	BACKGROUND-IMAGE: url(admon-note.png); BORDER-LEFT: #56a 6px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #f8f7ef; PADDING-LEFT: 60px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 6px 0.5em; MARGIN-BOTTOM: 10px
+}
+.tip {
+	BACKGROUND-IMAGE: url(admon-note.png); BORDER-LEFT: #56a 6px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #f8f7ef; PADDING-LEFT: 60px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 6px 0.5em; MARGIN-BOTTOM: 10px
+}
+.tip H3 {
+	BACKGROUND-COLOR: #f8f7ef; FONT-STYLE: italic; COLOR: #56a; FONT-SIZE: 1.05em; FONT-WEIGHT: bold; PADDING-TOP: 4px
+}
+.note H3 {
+	BACKGROUND-COLOR: #f8f7ef; FONT-STYLE: italic; COLOR: #56a; FONT-SIZE: 1.05em; FONT-WEIGHT: bold; PADDING-TOP: 4px
+}
+.tip {
+	BACKGROUND-IMAGE: url(admon-tip.png)
+}
+.note P {
+	FONT: italic 0.85em Georgia, serif
+}
+.tip P {
+	FONT: italic 0.85em Georgia, serif
+}
+.caution P {
+	FONT: italic 0.85em Georgia, serif
+}
+.warning P {
+	FONT: italic 0.85em Georgia, serif
+}
+.caution {
+	BACKGROUND-IMAGE: url(admon-warning.png); BORDER-LEFT: #d55c21 6px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #f8f7ef; PADDING-LEFT: 60px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 6px 0.5em; MARGIN-BOTTOM: 10px
+}
+.warning {
+	BACKGROUND-IMAGE: url(admon-warning.png); BORDER-LEFT: #d55c21 6px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #f8f7ef; PADDING-LEFT: 60px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 6px 0.5em; MARGIN-BOTTOM: 10px
+}
+.caution H3 {
+	FONT-STYLE: italic; COLOR: #922; FONT-SIZE: 1.05em; FONT-WEIGHT: bold; PADDING-TOP: 4px
+}
+.warning H3 {
+	FONT-STYLE: italic; COLOR: #922; FONT-SIZE: 1.05em; FONT-WEIGHT: bold; PADDING-TOP: 4px
+}
+.warning {
+	BACKGROUND-IMAGE: url(admon-bug2_small.png)
+}
+.important {
+	BACKGROUND-COLOR: #f18b8b
+}
+.important H1 {
+	BACKGROUND-COLOR: #f18b8b
+}
+.important .important_content {
+	BORDER-BOTTOM: #f18b8b 4px solid; BORDER-LEFT: #f18b8b 4px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f8cbcb; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-RIGHT: #f18b8b 4px solid; PADDING-TOP: 5px
+}
+.screenshot {
+	TEXT-ALIGN: center; MARGIN: 10px
+}
+.variablelist {
+	MARGIN-LEFT: 15px; MARGIN-RIGHT: 15px
+}
+P {
+	MARGIN: 0px 15px 1em
+}
+.synopsis {
+	MARGIN: 0px 15px 1em
+}
+.example {
+	MARGIN: 0px 15px 1em
+}
+.important {
+	MARGIN: 0px 15px 1em
+}
+.formaltable {
+	MARGIN: 0px 15px 1em
+}
+A:hover {
+	BORDER-BOTTOM: gray 1px solid
+}
+A {
+	COLOR: #000055; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000055; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.example {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND: #fff; MARGIN-LEFT: 0px; BORDER-TOP: medium none; MARGIN-RIGHT: 15px; BORDER-RIGHT: medium none
+}
+.example P.title {
+	FONT-SIZE: 0.85em
+}
+.figure P.title {
+	FONT-SIZE: 0.85em
+}
+.example-contents {
+	PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #fff; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.programlisting {
+	BORDER-BOTTOM: #ccc 1px dashed; BORDER-LEFT: #ccc 1px dashed; PADDING-BOTTOM: 1ex; BACKGROUND-COLOR: #eee; PADDING-LEFT: 1ex; PADDING-RIGHT: 1ex; WHITE-SPACE: normal; MARGIN-LEFT: 10px; OVERFLOW: hidden; BORDER-TOP: #ccc 1px dashed; MARGIN-RIGHT: 15px; BORDER-RIGHT: #ccc 1px dashed; PADDING-TOP: 1ex
+}
+.screen {
+	MARGIN-LEFT: 15px
+}
+CODE {
+	WHITE-SPACE: pre; FONT-SIZE: 1.05em
+}
+CODE.filename {
+	COLOR: #00688b; FONT-SIZE: 0.9em; FONT-WEIGHT: bold
+}
+A.uri {
+	COLOR: #00283b; FONT-SIZE: 1.1em; FONT-WEIGHT: bold
+}
+.uri .filename {
+	BACKGROUND-IMAGE: url(text-document.png); PADDING-LEFT: 18px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 1px 0px; MARGIN-LEFT: 1px; FONT-SIZE: 1.25em
+}
+uri.filename {
+	BACKGROUND-IMAGE: url(text-document.png); PADDING-LEFT: 18px; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: 1px 0px; MARGIN-LEFT: 1px; FONT-SIZE: 1.25em
+}
+SPAN.markup {
+	BACKGROUND-COLOR: #eee; COLOR: #8b2500; FONT-WEIGHT: bold
+}
+.figure {
+	TEXT-ALIGN: center; MARGIN: 15px auto
+}
+DIV.informaltable TABLE {
+	TEXT-ALIGN: center; WIDTH: 100%; MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+THEAD {
+	BACKGROUND: #eee
+}
+THEAD TH {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+DIV.table {
+	MARGIN-LEFT: 15px
+}
+DIV.table-contents TABLE {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-COLLAPSE: collapse; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+DIV.table-contents TD {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+DIV.table-contents TD P.checkmark:before {
+	CONTENT: url("checkmark.png")
+}
+.toc SPAN.preface {
+	PADDING-LEFT: 15px; FONT: bold italic 1.05em Arial, serif
+}
+.toc SPAN.part {
+	PADDING-LEFT: 15px; FONT: bold 1.3em Arial, serif
+}
+SPAN.chapter {
+	PADDING-LEFT: 15px; FONT: 1.05em Arial, serif
+}
+SPAN.sect1 {
+	PADDING-LEFT: 15px; FONT: 0.85em Georgia, serif
+}
+DIV.toc {
+	BORDER-BOTTOM: #cebcac 1px solid; BORDER-LEFT: #cebcac 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #efeedd; MARGIN-BOTTOM: 15px; BORDER-TOP: #cebcac 1px solid; BORDER-RIGHT: #cebcac 1px solid; PADDING-TOP: 10px
+}
+SPAN.sect2 {
+	PADDING-LEFT: 15px; FONT: 0.85em Georgia, serif
+}
+.toc B {
+	COLOR: #555; FONT-SIZE: 1.5em
+}
+DIV.list-of-examples {
+	BORDER-BOTTOM: #c5beb2 1px solid; BORDER-LEFT: #c5beb2 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #efeedd; MARGIN-BOTTOM: -1px; BORDER-TOP: #c5beb2 1px solid; BORDER-RIGHT: #c5beb2 1px solid; PADDING-TOP: 10px
+}
+DIV.list-of-tables {
+	BORDER-BOTTOM: #c5beb2 1px solid; BORDER-LEFT: #c5beb2 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #efeedd; MARGIN-BOTTOM: -1px; BORDER-TOP: #c5beb2 1px solid; BORDER-RIGHT: #c5beb2 1px solid; PADDING-TOP: 10px
+}
+DIV.list-of-tables DL {
+	MARGIN-LEFT: 25px
+}
+DIV.list-of-examples DL {
+	MARGIN-LEFT: 25px
+}
+DIV.list-of-figures {
+	BORDER-BOTTOM: #c5beb2 1px solid; BORDER-LEFT: #c5beb2 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #efeedd; MARGIN-TOP: -16px; MARGIN-BOTTOM: -1px; BORDER-TOP: #c5beb2 1px solid; BORDER-RIGHT: #c5beb2 1px solid; PADDING-TOP: 10px
+}
+DIV.list-of-figures DL {
+	MARGIN-LEFT: 25px
+}
+DIV.navheader {
+	BACKGROUND-COLOR: #ebf1e8
+}
+DIV.navfooter {
+	BACKGROUND-COLOR: #ebf1e8
+}
+DIV.navheader TD {
+	FONT-SIZE: 0.85em
+}
+DIV.navfooter TD {
+	FONT-SIZE: 0.85em
+}
+.qandaset DL {
+	BORDER-BOTTOM: #cebcac 1px solid; BORDER-LEFT: #cebcac 1px solid; PADDING-BOTTOM: 10px; BACKGROUND-COLOR: #efeedd; FONT-STYLE: italic; PADDING-LEFT: 5px; MARGIN-LEFT: 15px; BORDER-TOP: #cebcac 1px solid; BORDER-RIGHT: #cebcac 1px solid; PADDING-TOP: 10px
+}
+.qandaset TR.question {
+	FONT-STYLE: italic; FONT-WEIGHT: bold
+}
+.bdtable {
+	BORDER-BOTTOM: #000 1px solid; BORDER-LEFT: #000 1px solid; BORDER-TOP: #000 1px solid; BORDER-RIGHT: #000 1px solid
+}
+.bdhdr {
+	BACKGROUND: #ccc
+}
+.bdu {
+	BORDER-BOTTOM: #ccc 1px solid; FONT-SIZE: small
+}
+.bdu2 {
+	BORDER-BOTTOM: #333 1px solid; BORDER-LEFT: hidden; FONT-SIZE: small
+}
+.bdur {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: hidden; FONT-SIZE: small; BORDER-RIGHT: #ccc 1px solid
+}
+.bdur2 {
+	BORDER-BOTTOM: #333 1px solid; BORDER-LEFT: hidden; FONT-SIZE: small; BORDER-RIGHT: #ccc 1px solid
+}
+.error-text {
+	COLOR: #700000; FONT-SIZE: small
+}
+.error-number {
+	COLOR: #700000; FONT-SIZE: small
+}
