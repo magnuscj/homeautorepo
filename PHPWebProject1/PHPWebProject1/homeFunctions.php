@@ -1203,7 +1203,7 @@ $SLEEP_5MIN = 60*5;
                 $t=mysql_connect($serverHostName,$username,$password);
                 if(!@mysql_select_db($database))
                 {
-                    sleep(5);
+                    sleep(10);
                 }
                 else
                 {
