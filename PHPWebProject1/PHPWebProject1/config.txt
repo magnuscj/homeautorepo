@@ -1,0 +1,5 @@
+DBIP:192.168.1.45
+DBNAME:productiondbpa1
+DBPSW:root
+DBUSN:root
+SLEEP:180

@@ -1,0 +1,6 @@
+------ Graph dimentions ------ 
+GRAPH_X#998
+GRAPH_Y#700
+------ Legend ------ 
+LEGEND_FILL_COLOR#gray:0.43
+COLOR#gray

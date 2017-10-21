@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "PHPWebProject1", "PHPWebProject1\PHPWebProject1.phpproj", "{12DD057E-B789-4A22-AC73-4FEC1E29FA60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{71F51E35-959A-4272-A272-469920DC2B83}"
+	ProjectSection(SolutionItems) = preProject
+		Performance1.psess = Performance1.psess
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12DD057E-B789-4A22-AC73-4FEC1E29FA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12DD057E-B789-4A22-AC73-4FEC1E29FA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12DD057E-B789-4A22-AC73-4FEC1E29FA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12DD057E-B789-4A22-AC73-4FEC1E29FA60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+
+18:18:46  waitDbAlive---->
+18:18:46           serverHostName  192.168.1.45
+18:18:54  waitDbAlive<----
+18:21:02  waitDbAlive---->
+18:21:02           serverHostName  192.168.1.45
+18:21:02           username  root
+18:21:02  waitDbAlive<----
+18:27:55  waitDbAlive---->
+18:28:09  waitDbAlive---->
+18:28:22  waitDbAlive---->
+18:29:52  waitDbAlive---->
