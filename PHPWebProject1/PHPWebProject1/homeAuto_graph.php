@@ -29,38 +29,41 @@ do
 	if(isCli())
 	{
 		$time = time();
-		print date('H:i:s',$time).", Working \n";
+		//print date('H:i:s',$time).", Working \n";
 	}
 	// Create the graph.
     $graph = new Graph(998,700);
 	$graph->SetMargin(35,100,80,110);				//SetMargin($lm, $rm, $tm, $bm)
 	$graph->SetScale("datint");
+    $graph->SetColor('gray:0.43'); //gray:0.43
+    $graph->SetBackgroundGradient('black:1.1','black:1.1',GRAD_HOR,BGRAD_MARGIN);//black:1.1
 
 	$graph->legend->SetLayout(LEGEND_HOR);			// Adjust the legend position
 	$graph->legend->SetFont(FF_VERDANA,FS_NORMAL,8);
-	$graph->legend->SetFillColor('white');//gray:0.43
+	$graph->legend->SetFillColor('gray:0.43');//gray:0.43
 	$graph->legend->SetColumns(2);					// Set number of colums for legend
 	$graph->legend->Pos(0.5,0.05,"center","top");
-    $graph->legend->SetColor('black', 'black');//('gray', 'gray')
+    $graph->legend->SetColor('gray', 'gray');//('gray', 'gray')
 
 	$graph->xaxis->SetPos("min");
 	$graph->xaxis->title->Set("Datum" );
+    $graph->xaxis->title->SetColor('gray');
 	$graph->xaxis->scale-> SetDateFormat('d/m H:i');
 	$graph->xaxis->SetLabelAngle(80);
 	$graph->xaxis->SetTitleMargin(70);
-    $graph->xaxis->SetColor('black','black'); //('black:1.5','gray')
+    $graph->xaxis->SetColor('black:1.5','gray'); //('black:1.5','gray')
     $graph->xaxis->SetFont(FF_VERDANA, FS_NORMAL);
     $graph->xgrid->SetColor('black:1.5');
 	$graph->xgrid->Show(true);
 
     $graph->yaxis->title->SetColor('gray');
-    $graph->yaxis->SetColor('black','black');//('black:1.5','gray')
+    $graph->yaxis->SetColor('black:1.5','gray');//('black:1.5','gray')
     $graph->yaxis->SetFont(FF_VERDANA, FS_NORMAL);
     $graph->ygrid->SetColor('black:1.5');
 
-    $graph->SetColor('white:1.02'); //gray:0.43
-    $graph->SetBackgroundGradient('white','white',GRAD_HOR,BGRAD_MARGIN);//black:1.1
-    $graph->title->SetColor('black');//gray
+
+
+    $graph->title->SetColor('gray');//gray
 
 	$username		= getConfig("DBUSN");
 	$password		= getConfig('DBPSW');
@@ -117,7 +120,7 @@ do
 	}
 	else
 	{
-		$fdate = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-7,date("Y")));
+		$fdate = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-1,date("Y")));
 		$tdate = date("Y-m-d", mktime(0,0,0,date("m"),date("d"),date("Y")));
 	}
 
@@ -254,6 +257,7 @@ do
 				$graph->SetYScale(1,'lin',0,5);
 				$graph->ynaxis[1]->SetColor('teal');
 				$graph->ynaxis[1]->title->Set('mm');
+                $graph->ynaxis[1]->title->SetColor('teal');
 				$graph->ynaxis[1]->title->SetMargin(10);
 				$noOfFlowGraphs 		+= 1;
 			}
