@@ -9,13 +9,26 @@ require_once ("jpgraph/jpgraph_bar.php");
 require_once ('jpgraph/jpgraph_canvas.php');
 include ("homeFunctions.php");
 
-$fileName = "pictures\homeAuto_report.png";
-$sleepTime = 180;
+
+$file = explode('.', __FILE__);
+$file = explode('\\', $file[0]);
+$fileName = $file[sizeof($file)-1].".png";
+
+
 if(isCli())
 {
-	print "Sleeping ".$sleepTime."s. \n";
-	sleep($sleepTime);
+    $path = "pictures\\".$fileName;
+    $path2 = "J:\\www\\pictures\\".$fileName;
+    $sleepTime = getConfig("SLEEP")+20;
+   
 }
+else
+{
+    $path = "..\\pictures\\".$fileName;
+    $path2 = "J:\\www\\pictures\\".$fileName;
+    $sleepTime = 60;
+}
+
 do 
 {
 	if(isCli())
@@ -28,6 +41,11 @@ do
 	$password		= getConfig('DBPSW');
 	$database		= getConfig('DBNAME');
 	$serverHostName	= getConfig('DBIP');
+    waitDbAlive($serverHostName,$username,$password,$database);
+    $textColor      = 'gray:2.7';
+    $frameColor     = 'black:1.1';
+    $backGroundClr  = 'gray:0.43';
+    
 	$sensors 		= getSensorNames($username,$password,$database, $serverHostName); //From sensor configuration
 	
 	//Index names for the sensor configuration db table
@@ -40,20 +58,19 @@ do
 	$txt			="";
 	$txt2			="";
 	$i				= 0;	//General counter/index variable
-	$textColor		= "white";
-	$backgroundColor= "gray:0.43";
-	$infoStart_Y	= 70;
+	$infoStart_Y	= 47;
 	
 	$senNo 			= 0;
 	
 	$tdate 			= date("Y-m-d", mktime(0,0,0,date("m"),date("d"),date("Y")));
+    $fdate 			= date("Y-m-d", mktime(0,0,0,date("m"),date("d")-1,date("Y")));
 	
 	$graph = new CanvasGraph(405,425,'auto');
-	$graph->SetMargin(5,11,6,11);
-	$graph->SetMarginColor('black:1.1');
-	$graph->SetColor($backgroundColor);
+	$graph->SetMargin(5,6,6,6);
+	$graph->SetMarginColor($frameColor);
+	$graph->SetColor($backGroundClr);
 	
-	$t2 = new Text($tdate.", ".date("H:i"),333,402);
+	$t2 = new Text($tdate.", ".date("H:i"),337,402);
 	$t2->SetFont(FF_ARIAL,FS_BOLD,10);
 	$t2->SetColor('gray:0.63');
 	$t2->Align('center','top');// How should the text box interpret the coordinates?
@@ -68,47 +85,70 @@ do
 			$sensorShow[$i] 	= "on";
 		else
 			$sensorShow[$i] 	= "off";
-		
-		/*if((getCurr("0D000002D6550E28", $username, $password, $serverHostName, $database)>32) && $sensorName == "Skorst.")
-		{
-			$sensorShow[$i] 	= "on";
-		}	*/
 		$i++;
 		
 	}
-	
-	
 
-	$i=0;
+    $i=0;
 	foreach($sensors[$colID] as $sensorId)
 	{
-		if($sensorShow[$senNo] == "on" && $sensors[$colType][$senNo] == "temp")
-		{			
-			//degree sign &#176; &deg;
-			$graph->InitFrame();
-			$txt= $sensors[$colName][$senNo];//"This\nis\na TEXT!!!";
-			$t = new Text($txt,170,$infoStart_Y + $i*70);
-			$t->SetFont(FF_ARIAL,FS_BOLD,15);
-			$t->SetColor($textColor);
-			$t->Align('left','top');	// How should the text box interpret the coordinates?
-			$t->ParagraphAlign('left');	// How should the paragraph be aligned?
-			$graph->AddText($t);	// Stroke the text
+        $name = $sensors[$colName][$senNo];
+        if((   $name == "kylFrys" && (getCurr($sensorId, $username, $password, $serverHostName, $database)> -15)) 
+            || $name == "Inne" 
+            || $name == "Ute" 
+            ||($name == "Skorst" && (getCurr($sensorId, $username, $password, $serverHostName, $database)> 30)))
+        {
+		    if($sensorShow[$senNo] == "on" && $sensors[$colType][$senNo] == "temp")
+		    {			
+			    //degree sign &#176; &deg;
+			   
+			    $txt= $sensors[$colName][$senNo];//"This\nis\na TEXT!!!";
+			    $t = new Text($txt,10,$infoStart_Y + $i*70-30);
+			    $t->SetFont(FF_ARIAL,FS_BOLD,15);
+			    $t->SetColor($textColor);
+			    $t->Align('left','top');	// How should the text box interpret the coordinates?
+			    $t->ParagraphAlign('left');	// How should the paragraph be aligned?
+			    $graph->AddText($t);	// Stroke the text
 			
-			$txt= number_format(getCurr($sensorId, $username, $password, $serverHostName, $database),1).'°';//"This\nis\na TEXT!!!";
-			
-			
-			$t = new Text($txt,180,$infoStart_Y-32 + $i*70);
-			$t->SetFont(FF_ARIAL,FS_BOLD,50);
-			$t->SetColor($textColor);
-			$t->Align('right','top');	// How should the text box interpret the coordinates?
-			$t->ParagraphAlign('left');	// How should the paragraph be aligned?
-			$graph->AddText($t);	// Stroke the text
-		
-			//$t2->Stroke($graph->img);	// Stroke the text		
-		
-			$i++;
-		}
-		
+			    $txt= number_format(getCurr($sensorId, $username, $password, $serverHostName, $database),1).'°';//"This\nis\na TEXT!!!";
+                
+			    $t = new Text($txt,230,$infoStart_Y-32 + $i*70);
+			    $t->SetFont(FF_ARIAL,FS_BOLD,50);
+			    $t->SetColor($textColor);
+			    $t->Align('right','top');	// How should the text box interpret the coordinates?
+			    $t->ParagraphAlign('left');	// How should the paragraph be aligned?
+			    $graph->AddText($t);	// Stroke the text
+                
+                $max= "Max: ".number_format(getMax($fdate,$tdate,$sensorId,$username,$password,$serverHostName,$database),1).'°';
+                $t = new Text($max,285,$infoStart_Y-32 + $i*70);
+			    $t->SetFont(FF_ARIAL,FS_BOLD,15);
+			    $t->SetColor('red:1.6');
+			    $t->Align('left','top');	// How should the text box interpret the coordinates?
+			    $t->ParagraphAlign('left');	// How should the paragraph be aligned?
+			    $graph->AddText($t);	// Stroke the text
+                
+                $min= "Min: ".number_format(getMin($fdate,$tdate,$sensorId,$username,$password,$serverHostName,$database),1).'°';
+                $t = new Text($min,285,$infoStart_Y+3 + $i*70);
+			    $t->SetFont(FF_ARIAL,FS_BOLD,15);
+			    $t->SetColor('blue:1.6');
+			    $t->Align('left','top');	// How should the text box interpret the coordinates?
+			    $t->ParagraphAlign('left');	// How should the paragraph be aligned?
+			    $graph->AddText($t);	// Stroke the text
+                
+                $next = 68*$i;              
+                $p =  array( 10,$infoStart_Y+28+$next, 
+                            10,$infoStart_Y+30+$next, 
+                            385,$infoStart_Y+30+$next,
+                            385,$infoStart_Y+28+$next,
+                            10,$infoStart_Y+28+$next); 
+                $graph->img->SetColor('gray:0.47');
+                $graph->img->FilledPolygon($p);
+                
+			    $i++;
+		    }
+        }
+        
+        
 	if($sensorShow[$senNo] == "on" && $sensors[$colType][$senNo] == "power")
 		{			
 			$graph->InitFrame();
@@ -116,7 +156,7 @@ do
 		    $frdate = date('Y-m-d H:i:s',$time-180);
 			$todate = date('Y-m-d H:i:s',$time);
 			$avg = strval(60*60*getPowerAvg($frdate,$todate,$sensorId,$username,$password,$serverHostName,$database)/1000);			
-			$txt= number_format($avg,1);
+			$txt= number_format($avg,2);
 			$txt2= "kwh";
 						
 			$t = new Text($txt,360,$infoStart_Y+227);
@@ -141,10 +181,10 @@ do
 		{
 			$graph->InitFrame();
 			$time = time();
-			$frdate = date('Y-m-d H:i:s',$time-180);
+			$frdate = date('Y-m-d H:i:s',$time-3600);
 			$todate = date('Y-m-d H:i:s',$time);
 			$avg = strval(2.5*0.44704*getPowerAvg($frdate,$todate,$sensorId,$username,$password,$serverHostName,$database));
-			$txt= number_format($avg,1);
+			$txt= number_format($avg,2);
 			$txt2= "m/s";
 		
 			$t = new Text($txt,360,$infoStart_Y+227+40);
@@ -169,31 +209,28 @@ do
 	}
 	
 	
-	
-	
-	$graph->img->SetColor('black');
-	$graph->img->Line(250,$infoStart_Y-42,250,350);
-	$graph->img->Line(251,$infoStart_Y-42,251,350);
-	$graph->img->Line(252,$infoStart_Y-42,252,350);
-	$graph->img->Line(253,$infoStart_Y-42,253,350);
-	$graph->img->Line(254,$infoStart_Y-42,254,350);
-	
 	if(isCli())
 	{
 		$gdImgHandler = $graph->Stroke(_IMG_HANDLER);
-		$graph->img->Stream($fileName);
-		
+		//$graph->img->Stream($path);
+                $graph->img->Stream($path2);
+		//$graph->img->Stream("J:\\www\pictures\\homeauto_report.png");		
+
 		$utr = time()-$time;
-		print date('H:i:s',time()).", finished, it took "."$utr"." seconds.\n\n";
+		print date('H:i:s',time()).", finished, it took "."$utr"." seconds. Next run will be in "."$sleepTime"." seconds.\n\n";
+        print "$path.\n";
+        
 		sleep($sleepTime);
 	}
-	
-	if(!isCli())
+	else
 	{
-		// Display the graph
-		$graph->Stroke();
-	}
+        
+        $gdImgHandler = $graph->Stroke(_IMG_HANDLER);
+		$graph->img->Stream($path);
+		sleep($sleepTime);
+    }
 	
-}while (isCli());
+	
+}while (true);
 	
 ?>
